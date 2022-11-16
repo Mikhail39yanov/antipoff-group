@@ -1,7 +1,6 @@
-import React from 'react';
 import { IIcon } from '../../types/IIcon';
 
-export function LogoutMobile(props: IIcon) {
+export function IconLogoutMobile(props: IIcon) {
   const { className } = props;
 
   return (

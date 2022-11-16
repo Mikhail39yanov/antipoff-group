@@ -2,12 +2,7 @@
 @import '../../scss/variables';
 
 .header {
-  padding: 64px 35px;
   background-color: $KingfisherDaisy;
-
-  @include atLaptop768 {
-    padding: 64px 80px;
-  }
 }
 
 .headerContainer {
@@ -18,15 +13,22 @@
 }
 
 .headerWrapper {
+  padding: 64px 32px;
+
+  @include atLaptop768 {
+    padding: 64px 80px;
+  }
+}
+
+.description {
   max-width: 846px;
-  margin: 0 auto;
 }
 
 .logoutMobile {
   display: block;
   position: absolute;
-  right: 0;
-  top: -10px;
+  right: 32px;
+  top: 23px;
 
   @include atLaptop768 {
     display: none;
@@ -39,8 +41,8 @@
   @include atLaptop768 {
     display: block;
     position: absolute;
-    right: 0;
-    top: -20px;
+    right: 80px;
+    top: 20px;
     color: $white;
     font-size: 16px;
     padding: 8px 16px;

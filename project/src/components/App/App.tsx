@@ -1,14 +1,12 @@
 import { Header } from '../Header';
-import { Container } from '../Container';
 import '../../scss/style.scss';
+import { CardList } from '../CardList';
 
 function App() {
   return (
     <>
       <Header />
-      <Container>
-        <div>CardList</div>
-      </Container>
+      <CardList />
     </>
   );
 }

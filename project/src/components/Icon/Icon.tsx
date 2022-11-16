@@ -1,8 +1,8 @@
 import styles from './icon.module.scss';
 import classNames from 'classnames';
-import { LogoutMobile } from '../Icons/LogoutMobile';
+import { IconAnon, IconLike, IconLogoutMobile } from '../Icons';
 
-type TIconSize = 14 | 16 | 18 | 50 | 30;
+type TIconSize = 120 | 14 | 16 | 18 | 50 | 30;
 
 interface IIconProps {
   size: TIconSize;
@@ -12,7 +12,9 @@ interface IIconProps {
 }
 
 export enum EIcons {
-  LogoutMobile = 'LogoutMobile',
+  IconLogoutMobile = 'IconLogoutMobile',
+  IconAnon = 'IconAnon',
+  IconLike = 'IconLike',
 }
 
 export function Icon(props: IIconProps) {
@@ -21,8 +23,14 @@ export function Icon(props: IIconProps) {
   const classes = classNames(styles[`s${size}`], className, { [styles[`m${mobileSize}`]]: mobileSize });
 
   switch (name) {
-    case EIcons.LogoutMobile:
-      return <LogoutMobile className={classes} />;
+    case EIcons.IconLogoutMobile:
+      return <IconLogoutMobile className={classes} />;
+
+    case EIcons.IconAnon:
+      return <IconAnon className={classes} />;
+
+    case EIcons.IconLike:
+      return <IconLike className={classes} />;
 
     default:
       break;

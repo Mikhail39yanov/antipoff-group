@@ -14,15 +14,17 @@ export function Header() {
               Наша команда
             </Text>
             <Break top size={4} mobileSize={12} />
-            <Text As="p" size={20} mobileSize={16} color={EColor.white}>
-              Это опытные специалисты, хорошо разбирающиеся во всех задачах, которые ложатся на их плечи, и умеющие
-              находить выход из любых, даже самых сложных ситуаций.
-            </Text>
+            <div>
+              <Text As="p" size={20} mobileSize={16} color={EColor.white} addClass={styles.description}>
+                Это опытные специалисты, хорошо разбирающиеся во всех задачах, которые ложатся на их плечи, и умеющие
+                находить выход из любых, даже самых сложных ситуаций.
+              </Text>
+            </div>
           </div>
         </div>
         <button className={styles.logoutDesktop}>Выход</button>
         <button className={styles.logoutMobile}>
-          <Icon size={18} name={EIcons.LogoutMobile} />
+          <Icon size={18} name={EIcons.IconLogoutMobile} />
         </button>
       </Container>
     </header>

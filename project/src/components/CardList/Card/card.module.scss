@@ -1,0 +1,36 @@
+@import '../../../scss/mixin';
+@import '../../../scss/variables';
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 305px;
+  height: 263px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: $white;
+  box-shadow: 0px 0.996045px 3.98418px rgba(51, 51, 51, 0.15);
+  cursor: pointer;
+}
+
+// .userBox {
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+// }
+
+.buttonLike {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: $greyEB;
+  border-radius: 4px;
+}

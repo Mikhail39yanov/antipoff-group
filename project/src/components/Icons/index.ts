@@ -1,1 +1,3 @@
-export * from './LogoutMobile';
+export * from './IconLogoutMobile';
+export * from './IconAnon';
+export * from './IconLike';
