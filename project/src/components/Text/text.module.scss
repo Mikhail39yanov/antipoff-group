@@ -1,0 +1,47 @@
+@import '../../scss/variables';
+
+.s64 {
+  font-size: 64px;
+  line-height: 75px;
+}
+
+.s20 {
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.black {
+  color: $black;
+}
+
+.white {
+  color: $white;
+}
+
+.greyF8 {
+  color: $greyF8;
+}
+
+.upperCase {
+  text-transform: uppercase;
+}
+
+@media all and (max-width: 768px) {
+  .m36 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .m16 {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.bold {
+  font-weight: 500;
+}

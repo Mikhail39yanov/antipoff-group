@@ -1,7 +1,16 @@
-import styles from './app.module.scss';
+import { Header } from '../Header';
+import { Container } from '../Container';
+import '../../scss/style.scss';
 
 function App() {
-  return <p className={styles.red}>Hello, world!</p>;
+  return (
+    <>
+      <Header />
+      <Container>
+        <div>CardList</div>
+      </Container>
+    </>
+  );
 }
 
 export default App;

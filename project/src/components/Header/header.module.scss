@@ -1,0 +1,50 @@
+@import '../../scss/mixin';
+@import '../../scss/variables';
+
+.header {
+  padding: 64px 35px;
+  background-color: $KingfisherDaisy;
+
+  @include atLaptop768 {
+    padding: 64px 80px;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.headerWrapper {
+  max-width: 846px;
+  margin: 0 auto;
+}
+
+.logoutMobile {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -10px;
+
+  @include atLaptop768 {
+    display: none;
+  }
+}
+
+.logoutDesktop {
+  display: none;
+
+  @include atLaptop768 {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    color: $white;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid $white;
+  }
+}
