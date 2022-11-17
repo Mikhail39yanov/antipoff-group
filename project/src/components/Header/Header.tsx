@@ -1,16 +1,25 @@
-import { Break } from '../Break';
-import { Container } from '../Container';
-import { EIcons, Icon } from '../Icon';
-import { EColor, Text } from '../Text';
-import styles from './header.module.scss';
+import { useNavigate } from 'react-router-dom'
+import { Break } from '../Break'
+import { Container } from '../Container'
+import { EIcons, Icon } from '../Icon'
+import { EColor, Text } from '../Text'
+import styles from './header.module.scss'
 
 export function Header() {
+  const navigate = useNavigate()
+  const goBack = () => navigate('/')
+
+  const handleClick = () => {
+    sessionStorage.removeItem('token')
+    goBack()
+  }
+
   return (
     <header className={styles.header}>
       <Container>
         <div className={styles.headerWrapper}>
           {/* Page1 */}
-          {/* <div className={styles.headerContainer}>
+          <div className={styles.headerContainer}>
             <Text As="h1" size={64} mobileSize={36} color={EColor.white}>
               Наша команда
             </Text>
@@ -21,9 +30,9 @@ export function Header() {
                 находить выход из любых, даже самых сложных ситуаций.
               </Text>
             </div>
-          </div> */}
+          </div>
           {/* Page2 */}
-          <div className={styles.headerPartner}>
+          {/* <div className={styles.headerPartner}>
             <div className={styles.avatarBox}>
               <Icon size={186} name={EIcons.IconAnon} />
             </div>
@@ -36,19 +45,20 @@ export function Header() {
                 Партнер
               </Text>
             </div>
-            {/* <Break top size={4} mobileSize={12} /> */}
-          </div>
+          </div> */}
         </div>
         <button className={styles.backDesktop}>Назад</button>
         <button className={styles.backMobile}>
           <Icon size={18} name={EIcons.IconBackPage} />
         </button>
 
-        <button className={styles.logoutDesktop}>Выход</button>
+        <button className={styles.logoutDesktop} onClick={handleClick}>
+          Выход
+        </button>
         <button className={styles.logoutMobile}>
           <Icon size={18} name={EIcons.IconLogoutMobile} />
         </button>
       </Container>
     </header>
-  );
+  )
 }

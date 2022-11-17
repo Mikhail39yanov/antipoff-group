@@ -1,7 +1,7 @@
-import { Break } from '../../Break';
-import { Text } from '../../Text';
-import { EIcons, Icon } from '../../Icon';
-import styles from './card.module.scss';
+import { Break } from '../../Break'
+import { Text } from '../../Text'
+import { EIcons, Icon } from '../../Icon'
+import styles from './card.module.scss'
 
 export function Card() {
   return (
@@ -11,11 +11,13 @@ export function Card() {
       </div>
       <Break top size={12} />
       <Text As="h2" size={20} bold>
-        Артур Королёв
+        <a href="#1" className={styles.cardLink}>
+          Артур Королёв
+        </a>
       </Text>
       <button className={styles.buttonLike}>
         <Icon size={14} name={EIcons.IconLike} />
       </button>
     </li>
-  );
+  )
 }
