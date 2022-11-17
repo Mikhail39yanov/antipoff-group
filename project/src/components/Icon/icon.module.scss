@@ -1,8 +1,3 @@
-.s120 {
-  width: 120px;
-  height: 120px;
-}
-
 .s16 {
   width: 16px;
   height: 16px;
@@ -13,6 +8,11 @@
   height: 18px;
 }
 
+.s20 {
+  width: 20px;
+  height: 20px;
+}
+
 .s30 {
   width: 30px;
   height: 30px;
@@ -21,6 +21,16 @@
 .s50 {
   width: 50px;
   height: 50px;
+}
+
+.s120 {
+  width: 120px;
+  height: 120px;
+}
+
+.s186 {
+  width: 186px;
+  height: 186px;
 }
 
 // @media all and (min-width: 320px) and (max-width: 1023px) {

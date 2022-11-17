@@ -1,7 +1,7 @@
 import styles from './text.module.scss';
 import classNames from 'classnames';
 
-type TSizes = 64 | 36 | 20 | 16;
+type TSizes = 64 | 36 | 32 | 20 | 16;
 
 export enum EColor {
   black = 'black',

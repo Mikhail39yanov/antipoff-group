@@ -1,14 +1,10 @@
-import { Header } from '../Header';
 import '../../scss/style.scss';
-import { CardList } from '../CardList';
+// import { Page1 } from '../../pages/Page1';
+import { Page2 } from '../../pages/Page2';
 
 function App() {
-  return (
-    <>
-      <Header />
-      <CardList />
-    </>
-  );
+  // return <Page1 />;
+  return <Page2 />;
 }
 
 export default App;

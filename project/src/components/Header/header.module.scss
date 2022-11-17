@@ -50,3 +50,53 @@
     border: 1px solid $white;
   }
 }
+
+.headerPartner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  @include atLaptop768 {
+    flex-direction: row;
+    text-align: unset;
+  }
+}
+
+.avatarBox {
+  margin-top: 10px;
+  order: 1;
+
+  @include atLaptop768 {
+    margin-top: 0;
+    margin-right: 10px;
+    order: 0;
+  }
+}
+
+.backMobile {
+  display: block;
+  position: absolute;
+  left: 32px;
+  top: 23px;
+
+  @include atLaptop768 {
+    display: none;
+  }
+}
+
+.backDesktop {
+  display: none;
+
+  @include atLaptop768 {
+    display: block;
+    position: absolute;
+    left: 80px;
+    top: 20px;
+    color: $white;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid $white;
+  }
+}

@@ -1,8 +1,8 @@
 import styles from './icon.module.scss';
 import classNames from 'classnames';
-import { IconAnon, IconLike, IconLogoutMobile } from '../Icons';
+import { IconAnon, IconBackPage, IconLike, IconLogoutMobile, IconMailto, IconPhone } from '../Icons';
 
-type TIconSize = 120 | 14 | 16 | 18 | 50 | 30;
+type TIconSize = 186 | 120 | 50 | 30 | 20 | 18 | 16 | 14;
 
 interface IIconProps {
   size: TIconSize;
@@ -15,6 +15,9 @@ export enum EIcons {
   IconLogoutMobile = 'IconLogoutMobile',
   IconAnon = 'IconAnon',
   IconLike = 'IconLike',
+  IconBackPage = 'IconBackPage',
+  IconPhone = 'IconPhone',
+  IconMailto = 'IconMailto',
 }
 
 export function Icon(props: IIconProps) {
@@ -31,6 +34,15 @@ export function Icon(props: IIconProps) {
 
     case EIcons.IconLike:
       return <IconLike className={classes} />;
+
+    case EIcons.IconBackPage:
+      return <IconBackPage className={classes} />;
+
+    case EIcons.IconPhone:
+      return <IconPhone className={classes} />;
+
+    case EIcons.IconMailto:
+      return <IconMailto className={classes} />;
 
     default:
       break;
