@@ -11,6 +11,7 @@ import styles from './cardlist.module.scss'
 export interface IUser {
   id: number
   first_name: string
+  avatar: string
 }
 
 export interface IUsersData {
@@ -52,7 +53,7 @@ export function CardList() {
 
         <ul className={styles.cardsList}>
           {users.data.map((user) => (
-            <Card key={user.id} id={user.id} first_name={user.first_name} />
+            <Card key={user.id} id={user.id} first_name={user.first_name} avatar={user.avatar} />
           ))}
         </ul>
       </Container>

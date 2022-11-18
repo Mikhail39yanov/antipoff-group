@@ -30,7 +30,11 @@ export function HeaderPartner() {
         <div className={styles.headerWrapper}>
           <div className={styles.headerPartner}>
             <div className={styles.avatarBox}>
-              <Icon size={186} name={EIcons.IconAnon} />
+              {activeUser ? (
+                <img src={activeUser?.avatar} alt="аватарка" className={styles.avatarImage} />
+              ) : (
+                <Icon size={120} name={EIcons.IconAnon} />
+              )}
             </div>
             <div>
               <Text As="h1" size={64} mobileSize={36} color={EColor.white}>

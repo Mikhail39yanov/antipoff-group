@@ -39,3 +39,16 @@
     left: 0;
   }
 }
+
+.avatarBox {
+  padding: 5px;
+  border-radius: 100%;
+  box-shadow: none;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+}

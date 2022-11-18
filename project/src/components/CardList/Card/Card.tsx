@@ -5,11 +5,15 @@ import styles from './card.module.scss'
 import { IUser } from '../CardList'
 import { Link } from 'react-router-dom'
 
-export function Card({ id, first_name }: IUser) {
+export function Card({ id, first_name, avatar }: IUser) {
   return (
     <li className={styles.card}>
       <div className={styles.avatarBox}>
-        <Icon size={120} name={EIcons.IconAnon} />
+        {avatar ? (
+          <img src={avatar} alt="аватарка" className={styles.avatarImage} />
+        ) : (
+          <Icon size={120} name={EIcons.IconAnon} />
+        )}
       </div>
       <Break top size={12} />
       <Text As="h2" size={20} bold>
