@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from 'axios'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { IRootState } from '../../store/rootReducer'
 import { usersRequest, usersRequestSuccess } from '../../store/users/usersActions'
 import { Container } from '../Container'
@@ -42,7 +43,10 @@ export function CardList() {
       <Container>
         {users.data.length === 0 && (
           <h2 style={{ textAlign: 'center', marginTop: '1rem' }}>
-            Список постов пустой, попробуйте выйти и авторизоваться
+            Список партнеров пустой, попробуйте{' '}
+            <Link to={'/signup'} style={{ color: 'red' }}>
+              зарегистрироваться
+            </Link>
           </h2>
         )}
 

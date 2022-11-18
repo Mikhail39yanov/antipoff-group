@@ -6,8 +6,6 @@ import { CardPartner } from '../../pages/CardPartner'
 import { Main } from '../../pages/Main/Main'
 
 function App() {
-  // const token = sessionStorage.getItem('token')
-  // console.log(token)
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/users" replace />} />
