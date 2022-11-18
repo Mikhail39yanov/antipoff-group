@@ -1,24 +1,19 @@
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Break } from '../Break'
 import { Container } from '../Container'
 import { EIcons, Icon } from '../Icon'
 import { EColor, Text } from '../Text'
-import styles from './header.module.scss'
+import styles from './headermain.module.scss'
 
-export function Header() {
-  const navigate = useNavigate()
-  const goBack = () => navigate('/')
-
+export function HeaderMain() {
   const handleClick = () => {
     sessionStorage.removeItem('token')
-    goBack()
   }
 
   return (
     <header className={styles.header}>
       <Container>
         <div className={styles.headerWrapper}>
-          {/* Page1 */}
           <div className={styles.headerContainer}>
             <Text As="h1" size={64} mobileSize={36} color={EColor.white}>
               Наша команда
@@ -31,33 +26,14 @@ export function Header() {
               </Text>
             </div>
           </div>
-          {/* Page2 */}
-          {/* <div className={styles.headerPartner}>
-            <div className={styles.avatarBox}>
-              <Icon size={186} name={EIcons.IconAnon} />
-            </div>
-            <div>
-              <Text As="h1" size={64} mobileSize={36} color={EColor.white}>
-                Артур Королёв
-              </Text>
-              <Break top size={4} mobileSize={12} />
-              <Text As="p" size={32} mobileSize={20} color={EColor.white}>
-                Партнер
-              </Text>
-            </div>
-          </div> */}
         </div>
-        <button className={styles.backDesktop}>Назад</button>
-        <button className={styles.backMobile}>
-          <Icon size={18} name={EIcons.IconBackPage} />
-        </button>
 
-        <button className={styles.logoutDesktop} onClick={handleClick}>
+        <Link to={'/signup'} className={styles.logoutDesktop} onClick={handleClick}>
           Выход
-        </button>
-        <button className={styles.logoutMobile}>
+        </Link>
+        <Link to={'/signup'} className={styles.logoutMobile} onClick={handleClick}>
           <Icon size={18} name={EIcons.IconLogoutMobile} />
-        </button>
+        </Link>
       </Container>
     </header>
   )

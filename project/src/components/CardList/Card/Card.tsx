@@ -2,8 +2,10 @@ import { Break } from '../../Break'
 import { Text } from '../../Text'
 import { EIcons, Icon } from '../../Icon'
 import styles from './card.module.scss'
+import { IUser } from '../CardList'
+import { Link } from 'react-router-dom'
 
-export function Card() {
+export function Card({ id, first_name }: IUser) {
   return (
     <li className={styles.card}>
       <div className={styles.avatarBox}>
@@ -11,9 +13,9 @@ export function Card() {
       </div>
       <Break top size={12} />
       <Text As="h2" size={20} bold>
-        <a href="#1" className={styles.cardLink}>
-          Артур Королёв
-        </a>
+        <Link to={`/users/user${id}`} className={styles.cardLink}>
+          {first_name || 'Артур Королёв'}
+        </Link>
       </Text>
       <button className={styles.buttonLike}>
         <Icon size={14} name={EIcons.IconLike} />

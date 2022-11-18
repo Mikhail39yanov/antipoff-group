@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Text } from '../Text'
+import { Text } from '../../components/Text'
 import styles from './signup.module.scss'
 
 export function SignUp() {

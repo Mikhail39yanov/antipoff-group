@@ -1,22 +1,19 @@
 import '../../scss/style.scss'
-import { SignUp } from '../SignUp'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { Page1 } from '../../pages/Page1'
-import { Page2 } from '../../pages/Page2'
-import { NotFound } from '../NotFound'
+import { NotFound } from '../../pages/NotFound'
+import { SignUp } from '../../pages/SignUp'
+import { CardPartner } from '../../pages/CardPartner'
+import { Main } from '../../pages/Main/Main'
 
 function App() {
-  const token = sessionStorage.getItem('token')
-
+  // const token = sessionStorage.getItem('token')
   // console.log(token)
-  // return <Page1 />;
-  // return <Page2 />;
-  // return <SignUp />;
   return (
     <Routes>
-      <Route path="/" element={(token && <Navigate to="/users" replace />) || <SignUp />} />
-      <Route path="/users" element={<Page1 />} />
-      <Route path="users/:id" element={<Page2 />} />
+      <Route path="/" element={<Navigate to="/users" replace />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/users" element={<Main />} />
+      <Route path="/users/user:id" element={<CardPartner />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
