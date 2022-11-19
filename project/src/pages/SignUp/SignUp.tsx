@@ -92,7 +92,7 @@ export function SignUp() {
           Регистрация
         </Text>
         <Text As="span" size={16} bold>
-          Пройдите валидацию формы для продолжения работы приложения
+          Это тестовое задание, достаточно пройти валидацию формы для запуска приложения и заполнить поля со звездочкой
         </Text>
 
         <label className={styles.label} htmlFor="name">
@@ -111,7 +111,7 @@ export function SignUp() {
         {touched && valueNameError && <div style={{ color: 'red', fontSize: '10px' }}>{valueNameError}</div>}
 
         {/* <label className={styles.label} htmlFor="email">
-          Электронная почта
+          Электронная почта*
         </label>
         <input
           className={styles.input}
@@ -126,7 +126,7 @@ export function SignUp() {
         {touched && valueEmailError && <div style={{ color: 'red', fontSize: '10px' }}>{valueEmailError}</div>}
 
         <label className={styles.label} htmlFor="password">
-          Пароль
+          Пароль*
         </label>
         <input
           className={styles.input}
@@ -142,7 +142,7 @@ export function SignUp() {
         {touched && valuePassError && <div style={{ color: 'red', fontSize: '10px' }}>{valuePassError}</div>}
 
         <label className={styles.label} htmlFor="confirm-password">
-          Подтвердите пароль
+          Подтвердите пароль*
         </label>
         <input
           className={styles.input}

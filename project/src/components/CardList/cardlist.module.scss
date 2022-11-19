@@ -13,12 +13,49 @@
   }
 }
 
+.paginationList {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+
+  & > :not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.paginationItem {
+  position: relative;
+  padding: 10px;
+  border: 1px solid $KingfisherDaisy;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $Deluge;
+  }
+}
+
+.paginationItemActive {
+  position: relative;
+  padding: 10px;
+  border: 1px solid $KingfisherDaisy;
+  background-color: $KingfisherDaisy;
+  color: $white;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $Deluge;
+  }
+}
+
 // loader
 .ldsDualRing {
   display: inline-block;
   width: 80px;
   height: 80px;
 }
+
 .ldsDualRing:after {
   content: ' ';
   display: block;

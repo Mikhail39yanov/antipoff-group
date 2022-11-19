@@ -33,15 +33,25 @@ export const usersRequestError: ActionCreator<IUsersRequestErrorAction> = (error
   error,
 })
 
-export const usersRequestAsync = (): ThunkAction<void, IRootState, unknown, Action<string>> => (dispatch, getState) => {
-  ;(async () => {
+export interface ISetCurrentPageAction {
+  type: typeof EActions.SET_CURRENT_PAGE
+  payload: number
+}
+
+export const setCurrentPage: ActionCreator<ISetCurrentPageAction> = (page: number) => ({
+  type: EActions.SET_CURRENT_PAGE,
+  payload: page,
+})
+
+export const usersRequestAsync =
+  (pageNumber: number): ThunkAction<void, IRootState, unknown, Action<string>> =>
+  async (dispatch, getState) => {
     try {
       dispatch(usersRequest())
-      const dataUsers: AxiosResponse<IUsersData> = await axios.get('https://reqres.in/api/users')
+      const dataUsers: AxiosResponse<IUsersData> = await axios.get(`https://reqres.in/api/users?page=${pageNumber}`)
       const { page, data, total_pages } = dataUsers.data
       dispatch(usersRequestSuccess({ page, data, total_pages }))
     } catch (error) {
       dispatch(usersRequestError(String(error)))
     }
-  })()
-}
+  }

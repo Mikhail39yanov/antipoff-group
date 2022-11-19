@@ -1,7 +1,12 @@
 import { Reducer } from 'react'
 import { IUser } from '../../types/IUser'
 import { EActions } from '../rootReducer'
-import { IUsersRequestAction, IUsersRequestErrorAction, IUsersRequestSuccessAction } from './usersActions'
+import {
+  ISetCurrentPageAction,
+  IUsersRequestAction,
+  IUsersRequestErrorAction,
+  IUsersRequestSuccessAction,
+} from './usersActions'
 
 export interface IUsersState {
   page: number
@@ -11,7 +16,7 @@ export interface IUsersState {
   loading: boolean
 }
 
-type TUsersActions = IUsersRequestAction | IUsersRequestSuccessAction | IUsersRequestErrorAction
+type TUsersActions = IUsersRequestAction | IUsersRequestSuccessAction | IUsersRequestErrorAction | ISetCurrentPageAction
 
 export const usersReducer: Reducer<IUsersState, TUsersActions> = (state, action) => {
   switch (action.type) {
@@ -35,6 +40,12 @@ export const usersReducer: Reducer<IUsersState, TUsersActions> = (state, action)
         ...state,
         error: action.error,
         loading: false,
+      }
+
+    case EActions.SET_CURRENT_PAGE:
+      return {
+        ...state,
+        page: action.payload,
       }
 
     default:
