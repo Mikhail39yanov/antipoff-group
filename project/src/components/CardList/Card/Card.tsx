@@ -2,8 +2,8 @@ import { Break } from '../../Break'
 import { Text } from '../../Text'
 import { EIcons, Icon } from '../../Icon'
 import styles from './card.module.scss'
-import { IUser } from '../CardList'
 import { Link } from 'react-router-dom'
+import { IUser } from '../../../types/IUser'
 
 export function Card({ id, first_name, avatar }: IUser) {
   return (

@@ -1,10 +1,9 @@
 import { Reducer } from 'redux'
-import { IUsersData } from '../components/CardList'
 import { IUsersRequestAction, IUsersRequestErrorAction, IUsersRequestSuccessAction } from './users/usersActions'
-import { usersReducer } from './users/usersReducer'
+import { IUsersState, usersReducer } from './users/usersReducer'
 
 export interface IRootState {
-  users: IUsersData
+  users: IUsersState
 }
 
 const initialState: IRootState = {
@@ -12,6 +11,8 @@ const initialState: IRootState = {
     page: 0,
     data: [],
     total_pages: 0,
+    error: '',
+    loading: false,
   },
 }
 

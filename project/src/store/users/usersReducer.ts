@@ -1,23 +1,24 @@
-// import axios from 'axios'
 import { Reducer } from 'react'
-import { IUsersData } from '../../components/CardList'
+import { IUser } from '../../types/IUser'
 import { EActions } from '../rootReducer'
 import { IUsersRequestAction, IUsersRequestErrorAction, IUsersRequestSuccessAction } from './usersActions'
 
-// interface IUsersState {
-//   page: number
-//   data: IUser[]
-//   total_pages: number
-// }
+export interface IUsersState {
+  page: number
+  data: IUser[]
+  total_pages: number
+  error: string
+  loading: boolean
+}
 
 type TUsersActions = IUsersRequestAction | IUsersRequestSuccessAction | IUsersRequestErrorAction
 
-export const usersReducer: Reducer<IUsersData, TUsersActions> = (state, action) => {
+export const usersReducer: Reducer<IUsersState, TUsersActions> = (state, action) => {
   switch (action.type) {
     case EActions.USERS_REQUEST:
       return {
         ...state,
-        // loading: true,
+        loading: true,
       }
 
     case EActions.USERS_REQUEST_SUCCESS:
@@ -26,44 +27,20 @@ export const usersReducer: Reducer<IUsersData, TUsersActions> = (state, action) 
         page: action.usersData.page,
         data: action.usersData.data,
         total_pages: action.usersData.total_pages,
-        // loading: false,
+        loading: false,
       }
 
     case EActions.USERS_REQUEST_ERROR:
       return {
         ...state,
-        // error: action.error,
-        // loading: false,
+        error: action.error,
+        loading: false,
       }
 
     default:
       return state
   }
 }
-
-// export const postsRequestAsync = (): ThunkAction<void, IRootState, unknown, Action<string>> => (dispatch, getState) => {
-//   ;(async () => {
-//     dispatch(usersRequest())
-//     try {
-//       const {
-//         data: {
-//           data: { after, children },
-//         },
-//       } = await axios.get('https://oauth.reddit.com/best.json?sr_detail=true&limit=5', {
-//         headers: { Authorization: `bearer ${getState().token.token}` },
-//         params: {
-//           after: getState().posts.nextAfter,
-//         },
-//       })
-
-//       if (after !== getState().posts.nextAfter) {
-//         dispatch(postsRequestSuccess(after, children))
-//       }
-//     } catch (error) {
-//       dispatch(postsRequestError(String(error)))
-//     }
-//   })()
-// }
 
 // =================================================================
 // const initialState: IRootState = {
