@@ -2,21 +2,32 @@ import { Reducer } from 'react'
 import { IUser } from '../../types/IUser'
 import { EActions } from '../rootReducer'
 import {
+  IChangeLikeUserPageAction,
   ISetCurrentPageAction,
   IUsersRequestAction,
   IUsersRequestErrorAction,
   IUsersRequestSuccessAction,
 } from './usersActions'
 
+export type TDataLike = {
+  id: number
+  like: boolean
+}
 export interface IUsersState {
   page: number
   data: IUser[]
   total_pages: number
   error: string
   loading: boolean
+  dataLike: TDataLike[]
 }
 
-type TUsersActions = IUsersRequestAction | IUsersRequestSuccessAction | IUsersRequestErrorAction | ISetCurrentPageAction
+type TUsersActions =
+  | IUsersRequestAction
+  | IUsersRequestSuccessAction
+  | IUsersRequestErrorAction
+  | ISetCurrentPageAction
+  | IChangeLikeUserPageAction
 
 export const usersReducer: Reducer<IUsersState, TUsersActions> = (state, action) => {
   switch (action.type) {
@@ -46,6 +57,12 @@ export const usersReducer: Reducer<IUsersState, TUsersActions> = (state, action)
       return {
         ...state,
         page: action.payload,
+      }
+
+    case EActions.CHANGE_LIKE_USER:
+      return {
+        ...state,
+        dataLike: [action.payload],
       }
 
     default:

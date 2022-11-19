@@ -1,5 +1,6 @@
 import { Reducer } from 'redux'
 import {
+  IChangeLikeUserPageAction,
   ISetCurrentPageAction,
   IUsersRequestAction,
   IUsersRequestErrorAction,
@@ -18,6 +19,7 @@ const initialState: IRootState = {
     total_pages: 0,
     error: '',
     loading: false,
+    dataLike: [],
   },
 }
 
@@ -26,6 +28,7 @@ export enum EActions {
   USERS_REQUEST_SUCCESS = 'USERS_REQUEST_SUCCESS',
   USERS_REQUEST_ERROR = 'USERS_REQUEST_ERROR',
   SET_CURRENT_PAGE = 'SET_CURRENT_PAGE',
+  CHANGE_LIKE_USER = 'CHANGE_LIKE_USER',
 }
 
 export type IActions =
@@ -33,6 +36,7 @@ export type IActions =
   | IUsersRequestSuccessAction
   | IUsersRequestErrorAction
   | ISetCurrentPageAction
+  | IChangeLikeUserPageAction
 
 export const rootReduce: Reducer<IRootState, IActions> = (state = initialState, action) => {
   switch (action.type) {

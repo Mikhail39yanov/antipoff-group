@@ -3,7 +3,7 @@ import { Action, ActionCreator } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 import { IUsersData } from '../../types/IUsersData'
 import { EActions, IRootState } from '../rootReducer'
-import { IUsersState } from './usersReducer'
+import { IUsersState, TDataLike } from './usersReducer'
 
 export interface IUsersRequestAction {
   type: typeof EActions.USERS_REQUEST
@@ -41,6 +41,16 @@ export interface ISetCurrentPageAction {
 export const setCurrentPage: ActionCreator<ISetCurrentPageAction> = (page: number) => ({
   type: EActions.SET_CURRENT_PAGE,
   payload: page,
+})
+
+export interface IChangeLikeUserPageAction {
+  type: typeof EActions.CHANGE_LIKE_USER
+  payload: TDataLike
+}
+
+export const changeLikeUser: ActionCreator<IChangeLikeUserPageAction> = (dataLike: TDataLike) => ({
+  type: EActions.CHANGE_LIKE_USER,
+  payload: dataLike,
 })
 
 export const usersRequestAsync =

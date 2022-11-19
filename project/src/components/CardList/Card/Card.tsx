@@ -5,8 +5,11 @@ import styles from './card.module.scss'
 import { Link } from 'react-router-dom'
 import { IUser } from '../../../types/IUser'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { changeLikeUser } from '../../../store/users/usersActions'
 
 export function Card({ id, first_name, avatar }: IUser) {
+  const dispatch = useDispatch()
   const [like, setLike] = useState(false)
 
   return (
@@ -24,7 +27,13 @@ export function Card({ id, first_name, avatar }: IUser) {
           {first_name || 'Артур Королёв'}
         </Link>
       </Text>
-      <button className={styles.buttonLike} onClick={() => setLike(!like)}>
+      <button
+        className={styles.buttonLike}
+        onClick={() => {
+          setLike(!like)
+          dispatch(changeLikeUser())
+        }}
+      >
         {like ? <Icon size={14} name={EIcons.IconLiked} /> : <Icon size={14} name={EIcons.IconLike} />}
       </button>
     </li>
