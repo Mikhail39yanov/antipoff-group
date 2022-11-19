@@ -65,16 +65,18 @@ export function CardList() {
           </div>
         )}
 
-        <button
-          className={styles.buttonMore}
-          ref={refButtonMore}
-          onClick={() => {
-            showCard()
-            HideButton()
-          }}
-        >
-          Показать еще
-        </button>
+        {users.data.length !== 0 && (
+          <button
+            className={styles.buttonMore}
+            ref={refButtonMore}
+            onClick={() => {
+              showCard()
+              HideButton()
+            }}
+          >
+            Показать еще
+          </button>
+        )}
 
         <ul className={styles.paginationList}>
           {arrayPages.map((page, i) => (
