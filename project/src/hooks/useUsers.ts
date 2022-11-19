@@ -5,7 +5,7 @@ import { setCurrentPage, usersRequestAsync } from '../store/users/usersActions'
 import { IUsersState } from '../store/users/usersReducer'
 import { IUsersData } from '../types/IUsersData'
 
-export function useUsers(): [IUsersData, string, boolean, number, number, (pageNumber: string) => void] {
+export function useUsers(): [IUsersData, string, boolean, number, number, (pageNumber: number) => void] {
   const dispatch = useDispatch<any>()
 
   const token = sessionStorage.getItem('token')
@@ -21,7 +21,7 @@ export function useUsers(): [IUsersData, string, boolean, number, number, (pageN
     }
   }, [token, dispatch, currentPage])
 
-  function load(pageNumber: string) {
+  function load(pageNumber: number) {
     dispatch(setCurrentPage(pageNumber))
   }
 

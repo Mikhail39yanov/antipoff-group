@@ -4,8 +4,11 @@ import { EIcons, Icon } from '../../Icon'
 import styles from './card.module.scss'
 import { Link } from 'react-router-dom'
 import { IUser } from '../../../types/IUser'
+import { useState } from 'react'
 
 export function Card({ id, first_name, avatar }: IUser) {
+  const [like, setLike] = useState(false)
+
   return (
     <li className={styles.card}>
       <div className={styles.avatarBox}>
@@ -21,8 +24,8 @@ export function Card({ id, first_name, avatar }: IUser) {
           {first_name || 'Артур Королёв'}
         </Link>
       </Text>
-      <button className={styles.buttonLike}>
-        <Icon size={14} name={EIcons.IconLike} />
+      <button className={styles.buttonLike} onClick={() => setLike(!like)}>
+        {like ? <Icon size={14} name={EIcons.IconLiked} /> : <Icon size={14} name={EIcons.IconLike} />}
       </button>
     </li>
   )

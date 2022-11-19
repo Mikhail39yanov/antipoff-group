@@ -1,4 +1,4 @@
-import { IIcon } from '../../types/IIcon';
+import { IIcon } from '../../types/IIcon'
 
 export function IconLike({ className }: IIcon) {
   return (
@@ -15,5 +15,5 @@ export function IconLike({ className }: IIcon) {
         stroke="#151317"
       />
     </svg>
-  );
+  )
 }
