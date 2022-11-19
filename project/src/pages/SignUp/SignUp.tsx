@@ -18,7 +18,7 @@ export function SignUp() {
   const [valueConfirmPassError, setConfirmPassError] = useState('')
 
   const navigate = useNavigate()
-  const goMain = () => navigate('/users')
+  const goMain = () => navigate('/antipoff-group')
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
