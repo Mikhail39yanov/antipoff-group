@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/antipoff-group/static/css/main.d7bdfefc.css",
-    "main.js": "/antipoff-group/static/js/main.522d787b.js",
+    "main.js": "/antipoff-group/static/js/main.7a40d6a8.js",
     "index.html": "/antipoff-group/index.html",
     "main.d7bdfefc.css.map": "/antipoff-group/static/css/main.d7bdfefc.css.map",
-    "main.522d787b.js.map": "/antipoff-group/static/js/main.522d787b.js.map"
+    "main.7a40d6a8.js.map": "/antipoff-group/static/js/main.7a40d6a8.js.map"
   },
   "entrypoints": [
     "static/css/main.d7bdfefc.css",
-    "static/js/main.522d787b.js"
+    "static/js/main.7a40d6a8.js"
   ]
 }
